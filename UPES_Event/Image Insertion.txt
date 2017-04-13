@@ -1,0 +1,26 @@
+// put the images in the bin of the mongodb installation folder
+// In cmd go to the mongodb home directory and execute the command
+
+--> mongofiles.exe -d <dtabase_name> put img.jpg
+
+//Images will get stored in the mongodb using the GridFS schema
+
+//tmages will get stored in the form of chunkes in fs.files collections
+// To view the objectId and description, use the following command in cmd
+
+--> db.fs.files.find()
+
+//use the fs.files collection along with the created data collection to execute further
+
+ 
+RUN-->
+
+C:\Program Files\MongoDB\Server\3.4\bin>mongofiles.exe -d <dtabase_name> put img.jpg
+added file: lab.jpg
+
+> db.fs.files.find()
+{ "_id" : ObjectId("58eedc694d41ca1a9ca704da"), "chunkSize" : 261120, "uploadDate" : ISODate("2017-04-13T02:03:21.521Z"), "length" : 81866, "md5" : "f6ed4b3263353d69a33e288d7cf7b3dd", "filename" : "Energy.jpg" }
+{ "_id" : ObjectId("58eedcf24d41ca186800fec1"), "chunkSize" : 261120, "uploadDate" : ISODate("2017-04-13T02:05:38.123Z"), "length" : 97517, "md5" : "8b239c5500c5256300c3814a32d561a9", "filename" : "CIT.jpg" }
+{ "_id" : ObjectId("58eedd694d41ca0e34add693"), "chunkSize" : 261120, "uploadDate" : ISODate("2017-04-13T02:07:37.548Z"), "length" : 886493, "md5" : "59132cc461797f12f2511e39fc92bdc7", "filename" : "Sports.jpg" }
+{ "_id" : ObjectId("58eedd6e4d41ca228ca49185"), "chunkSize" : 261120, "uploadDate" : ISODate("2017-04-13T02:07:42.541Z"), "length" : 66748, "md5" : "1e01834f05ec85e20bc6544d746c1a75", "filename" : "Fire.jpg" }
+{ "_id" : ObjectId("58eedd964d41ca1f9c7473b5"), "chunkSize" : 261120, "uploadDate" : ISODate("2017-04-13T02:08:22.433Z"), "length" : 52714, "md5" : "ce8d6d59c905447c25294641dbfa416d", "filename" : "lab.jpg" }
